@@ -43,8 +43,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-/.idea/.gitignore
-/.idea/gradle.xml
-/.idea/kotlinc.xml
-/.idea/misc.xml
-/.idea/vcs.xml
