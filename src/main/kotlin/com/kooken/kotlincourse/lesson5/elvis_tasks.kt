@@ -21,6 +21,7 @@ default value of 0.5.
 fun soundIntensity(initSoundIntensity: Double, attenCoeff: Double?) {
     println(initSoundIntensity * (attenCoeff ?: 0.5))
 }
+
 /*
 Context: The customer pays for the delivery of the cargo. The cost of delivery is supplemented by cargo insurance,
 which is 0.5% of its value. If the cost is not specified, then the standard cost of $50 is taken.
@@ -30,7 +31,7 @@ Task: Calculate the total cost of delivery.
 
 fun totalDeliveryCost(cargoCost: Double?, deliveryCost: Double) {
     val insuranceCost = 0.5
-    val totalCargoCost = cargoCost?: 50.0
+    val totalCargoCost = cargoCost ?: 50.0
     val totalInsuranceCost = insuranceCost * totalCargoCost
     println(totalInsuranceCost + deliveryCost + totalCargoCost)
 }
@@ -43,5 +44,5 @@ Task: To report an error in case of missing atmospheric pressure readings.
 */
 
 fun atmosphericPressure(atm: Double?) {
-    atm?: throw Exception("Need an atmospheric pressure measurement results!")
+    atm ?: throw Exception("Need an atmospheric pressure measurement results!")
 }
