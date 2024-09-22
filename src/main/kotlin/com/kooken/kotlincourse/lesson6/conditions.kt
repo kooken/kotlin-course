@@ -1,14 +1,5 @@
 package com.kooken.kotlincourse.lesson6
 
-fun main() {
-    getSeason(null)
-    dogAge(null)
-    transportMode(null)
-    bonusPoints(4378)
-    documentType("Kotlin.docx")
-    convertTemperature(106.16, "F")
-}
-
 // Each task also requires validation of input data, if it makes sense.
 
 /*
@@ -41,7 +32,7 @@ fun dogAge(age: Double?) {
         }
 
         age <= 2.0 -> age * 10.5
-        age > 2.0 -> (2 * 10.5) + (age - 2) * 4  // First two years count as (2 * 10.5)
+        age > 2.0 -> 21 + (age - 2) * 4  // First two years count as (2 * 10.5) = 21
         else -> throw Exception("Incorrect input!")
     }
     println("Human age is $humanAge")
@@ -83,8 +74,8 @@ fun bonusPoints(purchaseAmount: Int?) {
         }
 
         purchaseAmount > 1000 -> {
-            // points for the first 1000 spent count as (1000/100) *2
-            val totalPoints = ((1000 / 100) * 2) + ((purchaseAmount - 1000) / 100) * 5
+            // points for the first 1000 spent count as (1000/100) * 2 = 20
+            val totalPoints = 20 + ((purchaseAmount - 1000) / 100) * 5
             println("You have earned $totalPoints bonus points.")
         }
 
@@ -120,21 +111,22 @@ specified unit of measurement (C/F). The unit of measurement must be passed as t
 Multiple arguments are separated by commas. A string must be returned.
 */
 
-fun convertTemperature(value: Double, unit: String) {
-    when (unit) {
+fun convertTemperature(value: Double, unit: String): String {
+    return when (unit) {
         "C" -> {
             val fahrenheit = (value * 9 / 5) + 32
-            println("$value°C is equal to $fahrenheit°F")
+            "$value°C is equal to $fahrenheit°F"
         }
 
         "F" -> {
             val celsius = (value - 32) * 5 / 9
-            println("$value°F is equal to $celsius°C")
+            "$value°F is equal to $celsius°C"
         }
 
-        else -> println("Unknown unit of measurement. Please use 'C' for Celsius or 'F' for Fahrenheit.")
+        else -> "Unknown unit of measurement. Please use 'C' for Celsius or 'F' for Fahrenheit."
     }
 }
+
 
 /*
 Task 7: "Selection of Clothes by Weather"
@@ -143,6 +135,16 @@ temperatures below 0, "windbreaker" from 0 to 15 degrees, and "T-shirt and short
 temperatures below -30 and above +35, recommend not to leave the house.
 */
 
+fun clothingWeather(temperature: Int): String {
+    return when {
+        temperature < -30 -> "Don't leave the house!"
+        temperature in -30..0 -> "Jacket and hat"
+        temperature in 1..15 -> "Windbreaker"
+        temperature in 16..35 -> "T-shirt and shorts"
+        temperature > 35 -> "Don't leave the house!"
+        else -> "Invalid temperature"
+    }
+}
 
 /*
 Task 8: "Selection of Movies by Age"
@@ -150,4 +152,11 @@ Context: The cinema offers movies of different age categories. Write a function 
 returns the movie categories available to him: "children's", "teenage", "18+".
 */
 
-
+fun movieCategory(age: Int): String {
+    return when {
+        age < 13 -> "Children's"
+        age in 13..17 -> "Teenage"
+        age >= 18 -> "18+"
+        else -> "Invalid age!"
+    }
+}
