@@ -6,7 +6,7 @@ class Emotion(val type: String, val intensity: Int) {
         val description = when {
             intensity <= 3 -> "weak emotion"
             intensity in 4..7 -> "moderate emotion"
-            intensity >= 8 -> "srong emotion"
+            intensity >= 8 -> "strong emotion"
             else -> "unknown"
         }
         println("Emotion: $type, Intensity: $intensity ($description)")

@@ -2,13 +2,13 @@ package com.kooken.kotlincourse.lesson4
 
 var number1: Int = 42
 var longNumber1: Long = 98765432123456789L
-var floatNumber1: Float =23.45f
+var floatNumber1: Float = 23.45f
 var doubleNumber1: Double = 0.123456789
 var string1: String = "Kotlin & Java"
 var boolean1: Boolean = false
 var char1: Char = 'c'
 var number2: Int = 500
-var longNumber2: Long =4294967296L
+var longNumber2: Long = 4294967296L
 var floatNumber2: Float = 18.0f
 var doubleNumber2: Double = -0.001
 var string2: String = "OpenAI"

@@ -16,7 +16,7 @@ fun main() {
     // Task 5
     val mutableIntSet: MutableSet<Int> = mutableSetOf(1, 2, 3, 4, 5)
     mutableIntSet.remove(2)
-    println("Updated set after 2nd element removal: $mutableSet")
+    println("Updated set after 2nd element removal: $mutableIntSet")
 
     // Task 6
     val numberSet: Set<Int> = setOf(1, 2, 3, 4, 5)
